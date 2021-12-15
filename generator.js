@@ -27,6 +27,7 @@ function getapi(api) {
     }, { fn: '', params: [], });
 
     params.push('data');
+    params.push('opts');
 
     methods.forEach(method => {
       if (! entry[method]) {
@@ -52,7 +53,7 @@ function getapi(api) {
 ${annotation}
 ${method}${fn}${suffix}(${args}) {
   const url = ${url};
-  return request.${method}(url, data);
+  return request.${method}(url, data, opts);
 },`);
 
     });
