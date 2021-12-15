@@ -44,7 +44,7 @@ function getapi(api) {
       const args = params.join(', ');
       let url = `'${key}'`;
       if (params.length > 1) {
-        params.slice(0, -1).forEach(param => {
+        params.slice(0, -2).forEach(param => {
           url += `.replace('{${param}}', ${param})`;
         });
       }
