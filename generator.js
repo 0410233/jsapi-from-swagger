@@ -1,4 +1,16 @@
 
+function getAnnotation(params) {
+  console.log(params)
+
+  const sumary = params.summary || '';
+  return `/**
+ * ${sumary}
+ * @param {Object} [data] 
+ * @param {RequestOptions} [options] - 配置项
+ * @returns {Promise}
+ */`;
+}
+
 function getapi(api) {
   if (api == null && window.drsSpec) {
     api = window.drsSpec.paths
@@ -40,7 +52,7 @@ function getapi(api) {
       }
       names[method+fn] = 1;
 
-      const annotation = '// ' + (entry[method].summary || '');
+      const annotation = getAnnotation(entry[method]);
       const args = params.join(', ');
       let url = `'${key}'`;
       if (params.length > 1) {
