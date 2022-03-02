@@ -1,12 +1,12 @@
 
 function getAnnotation(params) {
-  console.log(params)
+  // console.log(params)
 
   const sumary = params.summary || '';
   return `/**
  * ${sumary}
  * @param {Object} [data] 
- * @param {RequestOptions} [options] - 配置项
+ * @param {RequestOptions} [opts] - 配置项
  * @returns {Promise}
  */`;
 }
