@@ -6,7 +6,10 @@ function getAnnotation(params) {
   return `/**
  * ${sumary}
  * @param {Object} [data] 
- * @param {RequestOptions} [opts] - 配置项
+ * @param {Object} [opts] - 配置项
+ * @param {boolean} [opts.showLoading=false] - 是否显示加载提示
+ * @param {boolean} [opts.showError=false] - 是否提示错误
+ * @param {string} [opts.token] - 指定 token
  * @returns {Promise}
  */`;
 }
